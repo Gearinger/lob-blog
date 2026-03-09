@@ -1,4 +1,4 @@
-baseURL = 'https://lob.geary.me/'
+baseURL = 'https://gearinger.github.io/lob-blog/'
 languageCode = 'zh-cn'
 title = 'Lob Blog'
 theme = 'hugo-theme-cleanwhite'
