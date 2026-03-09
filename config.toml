@@ -1,0 +1,22 @@
+baseURL = 'https://lob.geary.me/'
+languageCode = 'zh-cn'
+title = 'Lob Blog'
+theme = 'hugo-theme-cleanwhite-master'
+
+[params]
+  description = 'Lob 的博客'
+  author = 'Lob'
+  # 邮箱
+  email = "lob@example.com"
+  # 主题色
+  theme_color = "#0066cc"
+  
+[params.social]
+  github = "Gearinger"
+  
+# 评论功能（可选）
+[params.disqus]
+  shortname = ""
+  
+# Google Analytics（可选）
+google_analytics = ""
