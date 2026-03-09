@@ -1,7 +1,7 @@
 baseURL = 'https://lob.geary.me/'
 languageCode = 'zh-cn'
 title = 'Lob Blog'
-theme = 'hugo-theme-cleanwhite-master'
+theme = 'hugo-theme-cleanwhite'
 
 [params]
   description = 'Lob 的博客'
