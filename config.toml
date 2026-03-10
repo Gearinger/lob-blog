@@ -6,10 +6,9 @@ theme = 'hugo-theme-cleanwhite'
 [params]
   description = 'Lob 的博客'
   author = 'Lob'
-  # 邮箱
   email = "lob@example.com"
-  # 主题色
   theme_color = "#0066cc"
+  custom_css = ["css/custom.css"]
   
 [params.social]
   github = "Gearinger"
