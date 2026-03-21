@@ -1,0 +1,68 @@
+{{ define "main" }}
+<div class="container">
+    <div class="search-container" data-pagefind-ignore="all">
+        <h1 class="title">搜索</h1>
+        <p style="color: #888; margin-bottom: 2rem;">输入关键词搜索文章</p>
+        
+        <input type="text" id="search-input" placeholder="搜索文章..." 
+               style="width: 100%; padding: 12px 16px; font-size: 1rem; 
+                      border: 1px solid #ddd; border-radius: 8px; 
+                      margin-bottom: 2rem;">
+        
+        <div id="search-results">
+            {{ range (where .Site.Pages "Type" "post").ByDate.Reverse }}
+            <div class="post-preview search-result">
+                <span class="date">{{ .Date.Format "2006-01-02" }}</span>
+                <h2 class="post-title" style="margin: 0.5rem 0;">
+                    <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+                </h2>
+                {{ if .Description }}
+                <p style="color: #888; margin-top: 0.5rem;">{{ .Description }}</p>
+                {{ end }}
+            </div>
+            {{ end }}
+        </div>
+    </div>
+</div>
+
+<script>
+const searchInput = document.getElementById('search-input');
+const results = document.querySelectorAll('.search-result');
+
+searchInput.addEventListener('input', function(e) {
+    const query = e.target.value.toLowerCase();
+    
+    results.forEach(function(result) {
+        const title = result.querySelector('a').textContent.toLowerCase();
+        const desc = result.querySelector('p')?.textContent.toLowerCase() || '';
+        
+        if (title.includes(query) || desc.includes(query)) {
+            result.style.display = 'block';
+        } else {
+            result.style.display = 'none';
+        }
+    });
+});
+</script>
+
+<style>
+.search-container {
+    padding: 2rem 0;
+}
+
+#search-input:focus {
+    outline: none;
+    border-color: var(--coral, #e07a5f);
+    box-shadow: 0 0 0 3px rgba(224, 122, 95, 0.1);
+}
+
+.search-result {
+    padding: 1.5rem;
+    border-bottom: 1px solid #eee;
+}
+
+.search-result:last-child {
+    border-bottom: none;
+}
+</style>
+{{ end }}

@@ -1,0 +1,19 @@
+{{ define "main" }}
+<div class="container">
+    <div class="archive-list" data-pagefind-ignore="all">
+        <h1 class="title" style="margin-bottom: 3rem;">所有文章</h1>
+        
+        {{ range (where .Pages "IsPage" true).ByDate.Reverse }}
+        <div class="post-preview">
+            <span class="date">{{ .Date.Format "2006-01-02" }}</span>
+            <h2 class="post-title" style="margin: 0.5rem 0;">
+                <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+            </h2>
+            {{ if .Description }}
+            <p class="post-meta" style="color: #888; margin-top: 0.5rem;">{{ .Description }}</p>
+            {{ end }}
+        </div>
+        {{ end }}
+    </div>
+</div>
+{{ end }}
