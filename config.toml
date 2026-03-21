@@ -26,19 +26,19 @@ pagerSize = 10
 [params.social]
   github = "Gearinger"
 
-# 菜单 - 主题用的是 additional_menus
+# 菜单
 [[params.additional_menus]]
   title = "文章"
-  href = "/post/"
+  href = "/lob-blog/post/"
 
 [[params.additional_menus]]
   title = "关于"
-  href = "/about/"
+  href = "/lob-blog/about/"
 
 # 固定链接
 [permalinks]
-  post = "/post/:slug/"
-  page = "/:slug/"
+  post = "/lob-blog/post/:slug/"
+  page = "/lob-blog/:slug/"
 
 # 代码高亮
 [markup.highlight]
