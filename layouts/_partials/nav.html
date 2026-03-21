@@ -1,0 +1,33 @@
+<!-- Navigation - Custom -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="{{ "/" | relLangURL }}">{{ .Site.Title }}</a>
+        </div>
+
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <!-- 用 configurable 的 additional_menus 替换硬编码 -->
+                    {{ range .Site.Params.additional_menus }}
+                        <li><a href="{{ .href | relLangURL }}">{{ .title }}</a></li>
+                    {{ end }}
+                    
+                    {{ if not .Site.Params.omit_categories }}
+                        {{ range $name, $taxonomy := .Site.Taxonomies.categories }}
+                        <li>
+                            <a href="{{ "categories/" | relLangURL }}{{ $name | urlize }}/">{{ $name }}</a>
+                        </li>
+                        {{ end }}
+                    {{ end }}
+                </ul>
+            </div>
+        </div>
+    </div>
+</nav>
