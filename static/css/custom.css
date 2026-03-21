@@ -1,4 +1,4 @@
-/* Lob Blog - Dan Koe Style Custom CSS */
+/* Lob Blog - Dan Koe Style + Lob个性化 */
 
 /* 大标题风格 */
 h1 {
@@ -47,23 +47,35 @@ blockquote {
     padding: 1rem 1.5rem;
 }
 
-/* 代码块 */
+/* 代码块 - Lob特色：珊瑚色 */
 pre, code {
     background: #f4f4f4;
     border-radius: 4px;
     font-family: 'SF Mono', Monaco, monospace;
+    font-size: 0.9rem;
 }
 
-/* 链接样式 */
+code {
+    color: #e07a5f;
+    padding: 2px 6px;
+}
+
+pre {
+    padding: 1rem;
+    border-left: 3px solid #e07a5f;
+}
+
+/* 链接样式 - 珊瑚色系 */
 a {
-    color: #0066cc;
+    color: #e07a5f;
     text-decoration: none;
     border-bottom: 1px solid transparent;
-    transition: border-color 0.2s;
+    transition: all 0.2s;
 }
 
 a:hover {
-    border-bottom-color: #0066cc;
+    border-bottom-color: #e07a5f;
+    color: #c45c3e;
 }
 
 /* 首页英雄区 */
@@ -75,7 +87,7 @@ a:hover {
     margin-bottom: 3rem;
 }
 
-/* 标签样式 */
+/* 标签样式 - 珊瑚色 */
 .tags {
     display: flex;
     gap: 0.5rem;
@@ -84,12 +96,18 @@ a:hover {
 }
 
 .tag {
-    background: #000;
+    background: #e07a5f;
     color: #fff;
     padding: 0.25rem 0.75rem;
     border-radius: 20px;
     font-size: 0.8rem;
     font-weight: 500;
+    transition: transform 0.2s, background 0.2s;
+}
+
+.tag:hover {
+    background: #c45c3e;
+    transform: translateY(-2px);
 }
 
 /* 日期样式 */
@@ -122,6 +140,24 @@ footer {
     border-top: 1px solid #eee;
 }
 
+/* 文章卡片悬浮效果 */
+.post-preview {
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.post-preview:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(224, 122, 95, 0.15);
+}
+
+/* 分隔线 */
+hr {
+    border: none;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #e07a5f, transparent);
+    margin: 3rem 0;
+}
+
 /* 移动端适配 */
 @media (max-width: 768px) {
     h1 {
@@ -134,5 +170,9 @@ footer {
     
     .hero {
         padding: 2rem 0;
+    }
+    
+    .content p {
+        font-size: 1rem;
     }
 }
