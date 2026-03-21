@@ -57,7 +57,4 @@ google_analytics = ""
   url = "/about/"
   weight = 3
 
-# 固定链接
-[permalinks]
-  post = "/post/:slug/"
-  page = "/:slug/"
+
