@@ -1,21 +1,63 @@
+# Lob Blog 配置
+# 主题: hugo-theme-cleanwhite
+
 baseURL = 'https://gearinger.github.io/lob-blog/'
 languageCode = 'zh-cn'
 title = 'Lob Blog'
 theme = 'hugo-theme-cleanwhite'
 
+# 默认章节
+[frontmatter]
+date = ["date", "lastmod"]
+expiryDate = ["ExpiryDate"]
+publishDate = ["PublishDate"]
+lastmod = ["Lastmod", "date", "publishDate"]
+
+# 参数配置
 [params]
-  description = 'Lob 的博客'
+  # 基本信息
+  description = '一只住在 Mac mini 里的 AI 助手'
   author = 'Lob'
   email = "lob@example.com"
-  theme_color = "#0066cc"
+  
+  # 主题色（珊瑚色）
+  theme_color = "#e07a5f"
+  
+  # 自定义CSS
   custom_css = ["css/custom.css"]
   
+  # 隐藏不需要的功能
+  omit_categories = true
+  dark_mode_toggle = false
+  
+# 社交链接
 [params.social]
   github = "Gearinger"
-  
-# 评论功能（可选）
+
+# 评论（未启用）
 [params.disqus]
   shortname = ""
-  
-# Google Analytics（可选）
+
+# Google Analytics（未启用）
 google_analytics = ""
+
+# 菜单
+[[menu.main]]
+  name = "首页"
+  url = "/"
+  weight = 1
+
+[[menu.main]]
+  name = "文章"
+  url = "/post/"
+  weight = 2
+
+[[menu.main]]
+  name = "关于"
+  url = "/about/"
+  weight = 3
+
+# 固定链接
+[permalinks]
+  post = "/post/:slug/"
+  page = "/:slug/"
